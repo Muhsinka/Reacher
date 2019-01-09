@@ -1,5 +1,6 @@
 # Enviroment
 ## Unity ML-Agents Reacher Enviroment
+![reacher](https://user-images.githubusercontent.com/43606874/50915438-df1e8c00-1449-11e9-8f08-5f46adba8ec0.gif)
 
 For this project, you will work with the reacher enviroment
 
@@ -29,6 +30,5 @@ This yields an average score for each episode (where the average is over all 20 
 As an example, consider the plot below, where we have plotted the average score (over all 20 agents) obtained with each episode.
 
 ![unknown](https://user-images.githubusercontent.com/43606874/50915362-aed6ed80-1449-11e9-9a68-d7816ee9bd23.png)
-Plot of average scores (over all agents) with each episode.
 
 The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30. In the case of the plot above, the environment was solved at episode 63, since the average of the average scores from episodes 64 to 163 (inclusive) was greater than +30.
