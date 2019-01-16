@@ -34,3 +34,4 @@ As an example, consider the plot below, where we have plotted the average score 
 Plot average scores (over all agents) with each episode
 
 The environment is considered solved, when the average (over 100 episodes) of those average scores is at least +30. In the case of the plot above, the environment was solved at episode 63, since the average of the average scores from episodes 64 to 163 (inclusive) was greater than +30.
+.
