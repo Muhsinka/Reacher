@@ -36,21 +36,48 @@ Hyperparameters used in the DDPG algorithm:
 First attemps with unimporeved code shown no signs of learning, the agent always got around 3-5 points in average.
 
 DDPG Code
+
 The benchmark implementation suggested in the project instruction added.
+
 ```
 self.critic_optimizer.zero_grad()
 critic_loss.backward()
 torch.nn.utils.clip_grad_norm(self.critic_local.parameters(), 1)
 self.critic_optimizer.step()
 ```
+
 ```
 def hard_copy_weights(self, target, source):
      """ copy weights from source to target network (part of initialization)"""
      for target_param, param in zip(target.parameters(), source.parameters()):
       target_param.data.copy_(param.data)
 ```
+
 The Network 
-additional 2 batch normalization layers implemented to both actor-critick networks.
+
+Additional 2 batch normalization layers implemented to both actor-critic networks.
+```
+    def __init__(self, state_size, action_size, seed=0, fc1_units=128, fc2_units=128):
+        super(Actor, self).__init__()
+        self.seed = torch.manual_seed(seed)
+        self.fc1 = nn.Linear(state_size, fc1_units)
+        self.fc2 = nn.Linear(fc1_units, fc2_units)
+        self.fc3 = nn.Linear(fc2_units, action_size)
+        self.bn1 = nn.BatchNorm1d(fc1_units)
+        self.bn2 = nn.BatchNorm1d(fc2_units)
+        self.reset_parameters()
+```
+
+```
+    def forward(self, state):
+        """Build an actor (policy) network that maps states -> actions."""
+        if state.dim() == 1:
+            state = torch.unsqueeze(state,0)
+        x = F.relu(self.fc1(state))
+        x = self.bn1(x)
+        x = F.relu(self.fc2(x))
+        return F.tanh(self.fc3(x))
+```
 
 ## Results
 
