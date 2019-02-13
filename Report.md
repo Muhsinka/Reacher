@@ -1,3 +1,5 @@
+## Introduction
+
 The project aims to provide a deeper understanding of Deep Deterministic policy Gradient(DDPG) that consist of actor-critic methods. The goal of this project is to solve the reacher enviroment under 200 episodes with average score of 30. The enviroment objective is to teach a double joined arm to follow the green area.
 
 The DDPG pseudocode used to solve the enviroment is shown below.
@@ -92,6 +94,17 @@ Environment solved in 197 episodes!	Average Score: 30.02
 
 ## Future Improvements
 
+The batch normalization showed significant improvemtns to the agent needs further learning.
+
+Differents hyperparameters tunings can be applied.
+
+D4PG algorithm in the Google Deep Mind's paper can be implemented.
+
+TRPO algorithm in the Trust Region Policy Optimization paper can be inplemented.
 
 ## Reference
-1. DDPG paper (https://arxiv.org/pdf/1509.02971.pdf)
+[DDPG paper](https://arxiv.org/pdf/1509.02971.pdf).
+
+[Google DeepMind´s paper](https://openreview.net/pdf?id=SyZipzbCb).
+
+[Trust Region Policy Optimization paper](https://arxiv.org/pdf/1502.05477.pdf).
