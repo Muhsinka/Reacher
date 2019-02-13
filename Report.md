@@ -1,4 +1,4 @@
-The goal of this project is to solve the reacher enviroment under 200 episodes with average score of 30. The enviroment objective is to teach a double joined arm to follow the green area. The project aims to provide a deeper understanding of Deep Deterministic policy Gradient(DDPG) that consist of actor-critic methods. 
+The project aims to provide a deeper understanding of Deep Deterministic policy Gradient(DDPG) that consist of actor-critic methods. The goal of this project is to solve the reacher enviroment under 200 episodes with average score of 30. The enviroment objective is to teach a double joined arm to follow the green area.
 
 The DDPG pseudocode used to solve the enviroment is shown below.
 
